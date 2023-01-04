@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack-dev-server --config config/webpack.dev.js",
     "build": "webpack --config config/webpack.prod.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "server": "json-server --watch mock/db.json --port 9000"
   },
   "browserslist": {
     "production": [
@@ -52,6 +52,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "json-server": "^0.17.1",
     "prettier": "^2.8.1",
     "styled-components": "^5.3.6",
     "styled-reset": "^4.4.4",
