@@ -12,11 +12,13 @@ const GlobalStyle = createGlobalStyle`
   *, *::before, *::after {
     box-sizing: border-box;
     font-family: SUITVariable, sans-serif;
+    color: ${({ theme }) => theme.colors.black};
   }
 
   #root {
     font-family: SUITVariable, sans-serif;
-    font-size: 30px;
+    ${({ theme }) => theme.fonts.body}
+    color: ${({ theme }) => theme.colors.black};
   }
 `;
 
