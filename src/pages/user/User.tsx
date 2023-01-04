@@ -1,7 +1,15 @@
+import Header from '@/components/Header';
+import styled from 'styled-components';
+
 export default function User() {
   return (
-    <div>
-      <span>user</span>
-    </div>
+    <Container>
+      <Header pathname="/user" />
+    </Container>
   );
 }
+
+const Container = styled.div`
+  width: 100%;
+  height: 100%;
+`;

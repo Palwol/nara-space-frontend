@@ -15,10 +15,18 @@ const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.black};
   }
 
-  #root {
+  body {
     font-family: SUITVariable, sans-serif;
     ${({ theme }) => theme.fonts.body}
     color: ${({ theme }) => theme.colors.black};
+    width: 100%;
+    height: 100%;
+  }
+
+  button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
   }
 `;
 

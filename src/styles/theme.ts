@@ -5,7 +5,17 @@ const makeFont = (weight: number, size: number) => {
 };
 
 type FontsName = 'naviBold' | 'navi' | 'title' | 'body';
-type ColorsName = 'black' | 'white' | 'gray1' | 'gray2' | 'blue1' | 'blue2';
+type ColorsName =
+  | 'black'
+  | 'white'
+  | 'gray1'
+  | 'gray2'
+  | 'lightblue'
+  | 'lightblue1'
+  | 'blue'
+  | 'blue1'
+  | 'blue2'
+  | 'blue3';
 
 export type FontConfig = {
   [key in FontsName]: string;
@@ -40,8 +50,12 @@ const colors: ColorConfig = {
   white: '#FFFFFF',
   gray1: '#EBEBEB',
   gray2: '#D4D4D4',
-  blue1: '#CBC5F0',
-  blue2: '#4130be',
+  lightblue: '#CBC5F0',
+  lightblue1: 'rgba(203, 197, 240, 0.5)',
+  blue: '#4130be',
+  blue1: 'rgba(65, 48, 190, 0.3)',
+  blue2: 'rgba(65, 48, 190, 0.4)',
+  blue3: 'rgba(65, 48, 190, 0.6)',
 };
 
 const theme: DefaultTheme = { fonts, colors };
