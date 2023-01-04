@@ -5,5 +5,6 @@ declare module 'styled-components' {
   export interface DefaultTheme {
     fonts: FontConfig;
     colors: ColorConfig;
+    mediaQuery: MediaQueryConfig;
   }
 }

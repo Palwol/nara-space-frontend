@@ -15,7 +15,9 @@ type ColorsName =
   | 'blue'
   | 'blue1'
   | 'blue2'
-  | 'blue3';
+  | 'blue3'
+  | 'blue4';
+type MediaQueryName = 'mobile' | 'desktop';
 
 export type FontConfig = {
   [key in FontsName]: string;
@@ -23,6 +25,10 @@ export type FontConfig = {
 
 export type ColorConfig = {
   [key in ColorsName]: string;
+};
+
+export type MediaQueryConfig = {
+  [key in MediaQueryName]: string;
 };
 
 const fontWeight = {
@@ -53,11 +59,21 @@ const colors: ColorConfig = {
   lightblue: '#CBC5F0',
   lightblue1: 'rgba(203, 197, 240, 0.5)',
   blue: '#4130be',
-  blue1: 'rgba(65, 48, 190, 0.3)',
-  blue2: 'rgba(65, 48, 190, 0.4)',
-  blue3: 'rgba(65, 48, 190, 0.6)',
+  blue1: 'rgba(65, 48, 190, 0.2)',
+  blue2: 'rgba(65, 48, 190, 0.3)',
+  blue3: 'rgba(65, 48, 190, 0.4)',
+  blue4: 'rgba(65, 48, 190, 0.6)',
 };
 
-const theme: DefaultTheme = { fonts, colors };
+const size = {
+  mobile: 650,
+};
+
+const mediaQuery: MediaQueryConfig = {
+  mobile: `@media only screen and (max-width: ${size.mobile}px)`,
+  desktop: `@media only screen and (min-width: ${size.mobile + 1}px)`,
+};
+
+const theme: DefaultTheme = { fonts, colors, mediaQuery };
 
 export default theme;

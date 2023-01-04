@@ -1,7 +1,8 @@
+import styled, { css } from 'styled-components';
+import { useNavigate } from 'react-router-dom';
 import Logo from '@/assets/images/logo.svg';
 import { PATH } from '@/constants/path';
-import styled from 'styled-components';
-import { useNavigate } from 'react-router-dom';
+import { DEVICE } from '@/constants/device';
 
 type HeaderProps = {
   pathname: string;
@@ -20,27 +21,73 @@ export default function Header({ pathname }: HeaderProps) {
 
   return (
     <Container>
-      <Logo />
-      <NavigationContainer>
-        <NavigationButton value={PATH.main} isSelected={pathname === PATH.main} onClick={handleNavigationButtonClick}>
-          PAGE 01
-        </NavigationButton>
-        <NavigationButton value={PATH.user} isSelected={pathname === PATH.user} onClick={handleNavigationButtonClick}>
-          PAGE 02
-        </NavigationButton>
-      </NavigationContainer>
+      <HeaderContainer>
+        <Logo />
+        <NavigationContainer className={DEVICE.desktop}>
+          <NavigationButton value={PATH.main} isSelected={pathname === PATH.main} onClick={handleNavigationButtonClick}>
+            PAGE 01
+          </NavigationButton>
+          <NavigationButton value={PATH.user} isSelected={pathname === PATH.user} onClick={handleNavigationButtonClick}>
+            PAGE 02
+          </NavigationButton>
+        </NavigationContainer>
+      </HeaderContainer>
+      <MobileNavigationContainer className={DEVICE.mobile}>
+        <MobileNavigationButton
+          value={PATH.main}
+          isSelected={pathname === PATH.main}
+          onClick={handleNavigationButtonClick}
+        >
+          PAGE01
+        </MobileNavigationButton>
+        <MobileNavigationButton
+          value={PATH.user}
+          isSelected={pathname === PATH.user}
+          onClick={handleNavigationButtonClick}
+        >
+          PAGE02
+        </MobileNavigationButton>
+      </MobileNavigationContainer>
     </Container>
   );
 }
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 100%;
+  ${({ theme }) => {
+    return css`
+      ${theme.mediaQuery.desktop} {
+        .mobile {
+          display: none;
+        }
+      }
+      ${theme.mediaQuery.mobile} {
+        .desktop {
+          display: none;
+        }
+      }
+    `;
+  }}
+`;
+
+const HeaderContainer = styled.div`
+  display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 70px;
   padding: 0 40px;
-  background-color: ${({ theme }) => theme.colors.blue3};
+  background-color: ${({ theme }) => theme.colors.blue4};
+  ${({ theme }) => {
+    return css`
+      ${theme.mediaQuery.mobile} {
+        height: 64px;
+        padding: 0 21px;
+      }
+    `;
+  }}
 `;
 
 const NavigationContainer = styled.div`
@@ -50,6 +97,26 @@ const NavigationContainer = styled.div`
 `;
 
 const NavigationButton = styled.button<NavigationButtonProps>`
-  ${({ isSelected, theme }) => (isSelected ? theme.fonts.naviBold : theme.fonts.navi)}
-  color: ${({ isSelected, theme }) => (isSelected ? theme.colors.blue : theme.colors.white)};
+  ${({ isSelected, theme }) => {
+    return css`
+      ${isSelected ? theme.fonts.naviBold : theme.fonts.navi}
+      color: ${isSelected ? theme.colors.blue : theme.colors.white};
+    `;
+  }}
+`;
+
+const MobileNavigationContainer = styled.div`
+  display: flex;
+`;
+
+const MobileNavigationButton = styled.button<NavigationButtonProps>`
+  width: 100%;
+  height: 47px;
+  ${({ isSelected, theme }) => {
+    return css`
+      ${isSelected ? theme.fonts.naviBold : theme.fonts.navi}
+      color: ${theme.colors.white};
+      background-color: ${isSelected ? theme.colors.blue : theme.colors.blue1};
+    `;
+  }}
 `;
