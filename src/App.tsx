@@ -1,12 +1,10 @@
-import Logo from './assets/logo.svg';
+import Main from './pages/Main';
 
 const App = () => {
   return (
-    <div>
-      <div style={{ backgroundColor: 'black' }}>
-        <Logo />
-      </div>
-    </div>
+    <>
+      <Main />
+    </>
   );
 };
 export default App;
