@@ -56,7 +56,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  z-index: 10;
+  z-index: 99;
 `;
 
 const HeaderContainer = styled.div`
