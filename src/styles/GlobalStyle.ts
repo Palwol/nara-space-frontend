@@ -34,6 +34,19 @@ const GlobalStyle = createGlobalStyle`
     }}
   }
 
+  div {
+    &::-webkit-scrollbar {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: ${({ theme }) => theme.colors.gray2};
+      border-radius: 5px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+  }
+
   button {
     background-color: transparent;
     border: none;

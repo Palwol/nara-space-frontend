@@ -24,10 +24,6 @@ export const usersSlice = createSlice({
   name: 'user',
   initialState: initialUsersState,
   reducers: {
-    setUsers(state, action: PayloadAction<UserData[]>) {
-      state.data = action.payload;
-      state.changedData = action.payload;
-    },
     initChangedUsers(state) {
       state.changedData = state.data;
     },
@@ -45,6 +41,7 @@ export const usersSlice = createSlice({
       })
       .addCase(getUsersThunk.fulfilled, (state, action) => {
         state.data = action.payload;
+        state.changedData = action.payload;
         state.isLoading = false;
         state.isError = null;
       })
@@ -55,5 +52,5 @@ export const usersSlice = createSlice({
   },
 });
 
-export const { setUsers, initChangedUsers, changeUserChecked } = usersSlice.actions;
+export const { initChangedUsers, changeUserChecked } = usersSlice.actions;
 export default usersSlice.reducer;

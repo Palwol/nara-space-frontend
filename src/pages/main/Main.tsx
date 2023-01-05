@@ -5,9 +5,12 @@ import UserList from './components/UserList';
 import Arrow from '@/assets/images/arrow.svg';
 import { useEffect, useState } from 'react';
 import theme from '@/styles/theme';
+import { useAppDispatch } from '@/hooks/redux-hooks';
+import { initChangedUsers } from '@/store/users-slice';
 
 export default function Main() {
   const [windowSize, setWindowSize] = useState(window.innerWidth);
+  const dispatch = useAppDispatch();
 
   const handleResize = () => {
     setWindowSize(window.innerWidth);
@@ -19,6 +22,12 @@ export default function Main() {
       window.removeEventListener('resize', handleResize);
     };
   }, []);
+
+  useEffect(() => {
+    return () => {
+      dispatch(initChangedUsers());
+    };
+  }, [dispatch]);
 
   return (
     <Container>

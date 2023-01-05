@@ -2,6 +2,10 @@ import styled, { css } from 'styled-components';
 import AngleBracket from '@/assets/images/angle-bracket.svg';
 import { useState } from 'react';
 
+type Props = {
+  nameWidth: number;
+};
+
 type CategoryType = {
   name: string;
   state: string;
@@ -11,12 +15,16 @@ type CategoryItemProps = {
   isSelected: boolean;
 };
 
+type TitleContainerProps = {
+  nameWidth: number;
+};
+
 const categories: CategoryType[] = [
   { name: '오름차 순', state: 'ascending' },
   { name: '내림차 순', state: 'descending' },
 ];
 
-export default function ListHeader() {
+export default function ListHeader({ nameWidth }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
   const [categoryItem, setCategoryItem] = useState<CategoryType>(categories[0]);
 
@@ -52,7 +60,7 @@ export default function ListHeader() {
           ))}
         </CategoryList>
       )}
-      <TitleContainer>
+      <TitleContainer nameWidth={nameWidth}>
         <span>이름</span>
         <span>생년월일</span>
       </TitleContainer>
@@ -136,18 +144,21 @@ const CategoryItem = styled.div<CategoryItemProps>`
   }
 `;
 
-const TitleContainer = styled.div`
+const TitleContainer = styled.div<TitleContainerProps>`
   display: flex;
-  gap: 83px;
   width: 100%;
-  ${({ theme }) => {
-    return css`
-      ${theme.fonts.title}
-      ${theme.mediaQuery.mobile} {
-        gap: 97px;
-      }
-    `;
-  }}
+  gap: 10px;
+  ${({ theme }) => theme.fonts.title}
+  span:first-child {
+    width: ${({ nameWidth }) => nameWidth}px;
+    ${({ theme }) => {
+      return css`
+        ${theme.mediaQuery.mobile} {
+          width: 114px;
+        }
+      `;
+    }}
+  }
 `;
 
 const Dimmer = styled.div`
