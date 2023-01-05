@@ -56,20 +56,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   width: 100%;
-  ${({ theme }) => {
-    return css`
-      ${theme.mediaQuery.desktop} {
-        .mobile {
-          display: none;
-        }
-      }
-      ${theme.mediaQuery.mobile} {
-        .desktop {
-          display: none;
-        }
-      }
-    `;
-  }}
+  z-index: 10;
 `;
 
 const HeaderContainer = styled.div`

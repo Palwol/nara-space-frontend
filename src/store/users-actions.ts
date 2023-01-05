@@ -6,6 +6,7 @@ export const getUsersThunk = createAsyncThunk<UserData[]>('/users/getUser', asyn
   return data;
 });
 
-export const updateUsersThunk = createAsyncThunk<void, UserData[]>('/users/updateUser', async (data) => {
+export const updateUsersThunk = createAsyncThunk<void, UserData[]>('/users/updateUser', async (data, thunkAPI) => {
   await updateUsers(data);
+  thunkAPI.dispatch(getUsersThunk());
 });

@@ -27,6 +27,10 @@ export type ColorConfig = {
   [key in ColorsName]: string;
 };
 
+export type SizeConfig = {
+  mobile: number;
+};
+
 export type MediaQueryConfig = {
   [key in MediaQueryName]: string;
 };
@@ -65,7 +69,7 @@ const colors: ColorConfig = {
   blue4: 'rgba(65, 48, 190, 0.6)',
 };
 
-const size = {
+const size: SizeConfig = {
   mobile: 650,
 };
 
@@ -74,6 +78,6 @@ const mediaQuery: MediaQueryConfig = {
   desktop: `@media only screen and (min-width: ${size.mobile + 1}px)`,
 };
 
-const theme: DefaultTheme = { fonts, colors, mediaQuery };
+const theme: DefaultTheme = { fonts, colors, size, mediaQuery };
 
 export default theme;
