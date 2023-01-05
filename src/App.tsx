@@ -9,18 +9,20 @@ import { RootState } from './store/store';
 import { useEffect } from 'react';
 
 const App = () => {
-  const usersData = useAppSelector((state: RootState) => state.users.data);
+  const { data, isLoading, error } = useAppSelector((state: RootState) => state.users);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (usersData.length) return;
+    if (data.length) return;
     dispatch(getUsersThunk());
-  }, [dispatch, usersData]);
+  }, [dispatch, data]);
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <RouterProvider router={router} />
+      {isLoading && <div>Loading...</div>}
+      {error && <div>{`${error?.code} Error Ocurred`}</div>}
+      {!isLoading && !error && <RouterProvider router={router} />}
     </ThemeProvider>
   );
 };

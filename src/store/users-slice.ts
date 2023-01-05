@@ -6,7 +6,7 @@ export type UsersState = {
   data: UserData[];
   changedData: UserData[];
   isLoading: boolean;
-  isError: SerializedError | null;
+  error: SerializedError | null;
 };
 
 type ChangeUserCheckedState = {
@@ -17,7 +17,7 @@ const initialUsersState: UsersState = {
   data: [],
   changedData: [],
   isLoading: false,
-  isError: null,
+  error: null,
 };
 
 export const usersSlice = createSlice({
@@ -37,17 +37,17 @@ export const usersSlice = createSlice({
     builder
       .addCase(getUsersThunk.pending, (state) => {
         state.isLoading = true;
-        state.isError = null;
+        state.error = null;
       })
       .addCase(getUsersThunk.fulfilled, (state, action) => {
         state.data = action.payload;
         state.changedData = action.payload;
         state.isLoading = false;
-        state.isError = null;
+        state.error = null;
       })
       .addCase(getUsersThunk.rejected, (state, action) => {
         state.isLoading = false;
-        state.isError = action.error;
+        state.error = action.error;
       });
   },
 });
