@@ -48,10 +48,9 @@ export default function Main() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 `;
 
 const UserListContainer = styled.div`
@@ -60,7 +59,7 @@ const UserListContainer = styled.div`
   align-items: center;
   gap: 47px;
   width: 100%;
-  height: 100%;
+  flex: 1;
   ${({ theme }) => {
     return css`
       ${theme.mediaQuery.mobile} {

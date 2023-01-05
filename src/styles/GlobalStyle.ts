@@ -4,13 +4,19 @@ import reset from 'styled-reset';
 const GlobalStyle = createGlobalStyle`
   ${reset}
 
+  html, body {
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.gray1};
+  }
+
   *, *::before, *::after {
     box-sizing: border-box;
     font-family: 'SUITVariable', sans-serif;
     color: ${({ theme }) => theme.colors.black};
   }
 
-  body {
+  #root {
     font-family: 'SUITVariable', sans-serif;
     line-height: 19px;
     width: 100%;
@@ -19,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
       return css`
         ${theme.fonts.body}
         color: ${theme.colors.black};
-        background-color: ${theme.colors.gray1};
         ${theme.mediaQuery.desktop} {
           .mobile {
             display: none;

@@ -36,7 +36,7 @@ const Container = styled.div`
     return css`
       ${theme.mediaQuery.mobile} {
         width: 100%;
-        height: 100%;
+        height: 304px;
       }
     `;
   }}
