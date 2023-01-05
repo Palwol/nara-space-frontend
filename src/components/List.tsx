@@ -2,6 +2,8 @@ import { UserData } from '@/api/api';
 import { Ellipsis } from '@/styles/styleUtils';
 import styled, { css } from 'styled-components';
 import Check from '@/assets/images/check.svg';
+import { useAppDispatch } from '@/hooks/redux-hooks';
+import { changeUserChecked } from '@/store/users-slice';
 
 type Props = {
   data: UserData[];
@@ -10,6 +12,7 @@ type Props = {
 };
 
 type UserItemProps = {
+  setCheckBox: boolean;
   isChecked: boolean;
 };
 
@@ -22,12 +25,19 @@ type CheckBoxProps = {
 };
 
 export default function List({ data, nameWidth, setCheckBox }: Props) {
+  const dispatch = useAppDispatch();
+
+  const handleUserClick = (id: number) => {
+    if (!setCheckBox) return;
+    dispatch(changeUserChecked({ id }));
+  };
+
   return (
     <Container>
       <UserList>
         {data.map((item, index) => (
           <UserItemContainer key={item.id}>
-            <UserItem isChecked={setCheckBox && item.checked}>
+            <UserItem setCheckBox={setCheckBox} isChecked={item.checked} onClick={() => handleUserClick(item.id)}>
               <UserInfoContainer>
                 <NameSpan nameWidth={nameWidth}>{item.name}</NameSpan>
                 <span>{item.date.replaceAll('-', '.')}</span>
@@ -78,8 +88,9 @@ const UserItem = styled.div<UserItemProps>`
   width: 100%;
   height: 39px;
   padding: 0 20px;
-  background-color: ${({ isChecked, theme }) => isChecked && theme.colors.blue2};
+  background-color: ${({ setCheckBox, isChecked, theme }) => setCheckBox && isChecked && theme.colors.blue2};
   ${({ theme }) => theme.fonts.body};
+  cursor: ${({ setCheckBox }) => setCheckBox && 'pointer'};
 `;
 
 const UserInfoContainer = styled.div`
