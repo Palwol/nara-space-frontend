@@ -1,7 +1,9 @@
 import List from '@/components/List';
 import ListHeader from '@/components/ListHeader';
+import { CategoryType, sortCategories } from '@/constants/sort';
 import { useAppSelector } from '@/hooks/redux-hooks';
 import { RootState } from '@/store/store';
+import { sortData } from '@/utils/sort';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
@@ -10,14 +12,15 @@ const NAME_WIDTH = 80;
 export default function UserList() {
   const usersData = useAppSelector((state: RootState) => state.users.changedData);
   const [orderedData, setOrderedData] = useState(usersData);
+  const [categoryItem, setCategoryItem] = useState<CategoryType>(sortCategories[0]);
 
   useEffect(() => {
-    setOrderedData(usersData);
-  }, [usersData]);
+    setOrderedData(sortData(categoryItem, usersData));
+  }, [categoryItem, usersData]);
 
   return (
     <Container>
-      <ListHeader nameWidth={NAME_WIDTH} />
+      <ListHeader nameWidth={NAME_WIDTH} categoryItem={categoryItem} setCategoryItem={setCategoryItem} />
       <ListContainer>
         <List data={orderedData} nameWidth={NAME_WIDTH} setCheckBox={true} />
       </ListContainer>

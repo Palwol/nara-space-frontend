@@ -1,6 +1,4 @@
-const PATH = {
+export const PATH = {
   main: '/',
   user: '/user',
 };
-
-export { PATH };

@@ -1,14 +1,12 @@
 import styled, { css } from 'styled-components';
 import AngleBracket from '@/assets/images/angle-bracket.svg';
 import { useState } from 'react';
+import { CategoryType, sortCategories } from '@/constants/sort';
 
 type Props = {
   nameWidth: number;
-};
-
-type CategoryType = {
-  name: string;
-  state: string;
+  categoryItem: CategoryType;
+  setCategoryItem: React.Dispatch<React.SetStateAction<CategoryType>>;
 };
 
 type CategoryItemProps = {
@@ -19,14 +17,8 @@ type TitleContainerProps = {
   nameWidth: number;
 };
 
-const categories: CategoryType[] = [
-  { name: '오름차 순', state: 'ascending' },
-  { name: '내림차 순', state: 'descending' },
-];
-
-export default function ListHeader({ nameWidth }: Props) {
+export default function ListHeader({ nameWidth, categoryItem, setCategoryItem }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
-  const [categoryItem, setCategoryItem] = useState<CategoryType>(categories[0]);
 
   const handleSelectBoxClick = () => {
     setIsOpened((prev) => !prev);
@@ -44,18 +36,18 @@ export default function ListHeader({ nameWidth }: Props) {
   return (
     <Container>
       <SelectBox onClick={handleSelectBoxClick}>
-        <span>{categoryItem.name}</span>
+        <span>{categoryItem.text}</span>
         <AngleBracket />
       </SelectBox>
       {isOpened && (
         <CategoryList>
-          {categories.map((category) => (
+          {sortCategories.map((category) => (
             <CategoryItem
-              key={category.state}
+              key={category.name}
               onClick={() => handleCategoryClick(category)}
               isSelected={category.name === categoryItem.name}
             >
-              {category.name}
+              {category.text}
             </CategoryItem>
           ))}
         </CategoryList>
