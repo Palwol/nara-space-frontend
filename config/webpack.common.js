@@ -24,11 +24,15 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ['file-loader'],
+        type: 'asset/resource',
       },
       {
         test: /\.(png|jpg|gif)$/,
         type: 'asset/resource',
+      },
+      {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },
