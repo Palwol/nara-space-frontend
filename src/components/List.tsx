@@ -1,12 +1,16 @@
 import { UserData } from '@/api/api';
 import { Ellipsis } from '@/styles/styleUtils';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import Check from '@/assets/images/check.svg';
 
 type Props = {
   data: UserData[];
   nameWidth: number;
   setCheckBox: boolean;
+};
+
+type UserItemProps = {
+  isChecked: boolean;
 };
 
 type NameSpanProps = {
@@ -21,14 +25,21 @@ export default function List({ data, nameWidth, setCheckBox }: Props) {
   return (
     <Container>
       <UserList>
-        {data.map((item) => (
-          <UserItem key={item.id}>
-            <UserInfoContainer>
-              <NameSpan nameWidth={nameWidth}>{item.name}</NameSpan>
-              <span>{item.date.replaceAll('-', '.')}</span>
-            </UserInfoContainer>
-            {setCheckBox && <CheckBox isChecked={item.checked}>{item.checked && <Check />}</CheckBox>}
-          </UserItem>
+        {data.map((item, index) => (
+          <UserItemContainer key={item.id}>
+            <UserItem isChecked={setCheckBox && item.checked}>
+              <UserInfoContainer>
+                <NameSpan nameWidth={nameWidth}>{item.name}</NameSpan>
+                <span>{item.date.replaceAll('-', '.')}</span>
+              </UserInfoContainer>
+              {setCheckBox && (
+                <CheckBoxContainer>
+                  <CheckBox isChecked={item.checked}>{item.checked && <Check />}</CheckBox>
+                </CheckBoxContainer>
+              )}
+            </UserItem>
+            {index === data.length - 1 || <DivideLine />}
+          </UserItemContainer>
         ))}
       </UserList>
     </Container>
@@ -44,20 +55,31 @@ const UserList = styled.ul`
   flex-direction: column;
   width: 100%;
   height: 100%;
-  padding: 10px 20px;
+  padding: 10px 0;
 `;
 
-const UserItem = styled.li`
+const UserItemContainer = styled.li`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const DivideLine = styled.hr`
+  width: calc(100% - 40px);
+  height: 1px;
+  border: none;
+  background-color: ${({ theme }) => theme.colors.gray1};
+`;
+
+const UserItem = styled.div<UserItemProps>`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   height: 39px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.gray1};
+  padding: 0 20px;
+  background-color: ${({ isChecked, theme }) => isChecked && theme.colors.blue2};
   ${({ theme }) => theme.fonts.body};
-  &:last-of-type {
-    border: none;
-  }
 `;
 
 const UserInfoContainer = styled.div`
@@ -68,6 +90,25 @@ const UserInfoContainer = styled.div`
 
 const NameSpan = styled(Ellipsis)<NameSpanProps>`
   width: ${({ nameWidth }) => nameWidth}px;
+  ${({ theme }) => {
+    return css`
+      ${theme.mediaQuery.mobile} {
+        width: 114px;
+      }
+    `;
+  }}
+`;
+
+const CheckBoxContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  ${({ theme }) => {
+    return css`
+      ${theme.mediaQuery.mobile} {
+        margin-right: 34px;
+      }
+    `;
+  }}
 `;
 
 const CheckBox = styled.div<CheckBoxProps>`

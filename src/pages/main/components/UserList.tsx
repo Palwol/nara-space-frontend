@@ -44,5 +44,5 @@ const Container = styled.div`
 
 const ListContainer = styled.div`
   flex: 1;
-  overflow-y: auto;
+  overflow-y: overlay;
 `;
