@@ -67,6 +67,42 @@ npm run dev # webpack dev server 시작
   - 변경한 유저 데이터를 저장 버튼으로 저장하면 `changedData`를 이용해 서버에 patch 요청을 보내고, 다시 데이터를 불러와서 `data`, `changedData`에 저장합니다.
   - 메인페이지를 벗어나면 `changedData`를 초기 상태인 `data`로 초기화합니다.
 
+### json-server 데이터 구조
+
+- `user_data.json` 데이터를 json-server에 다음과 같이 저장했습니다.
+
+```json
+{
+  "users": [
+    {
+      "id": 1,
+      "result": [
+        {
+          "id": 1,
+          "name": "Pororo",
+          "date": "1984-02-23",
+          "comment": "I like to play.",
+          "image": "1.png",
+          "checked": false
+        },
+        {
+          "id": 2,
+          "name": "Apple Kim",
+          "date": "1995-01-12",
+          "comment": "This is innovation.",
+          "image": "2.png",
+          "checked": true
+        }
+        // ...
+      ]
+    }
+  ]
+}
+```
+
+- 유저들의 `checked` 정보를 변경한 데이터를 서버에 업데이트 요청 시, `checked`가 변경된 유저들마다 `patch` 요청을 하나씩 보내기에는 서버 요청 부담이 크다고 판단했습니다.
+- 따라서 `users` 데이터에 id 1을 부여하고, id 1의 result에 해당하는 전체 유저 데이터를 payload로 보내서 업데이트하는 방식을 사용했습니다.
+
 ### 오름차순, 내림차순 정렬
 
 - 오름차순, 내림차순을 선택하는 selectbox와 정렬이 적용되는 리스트는 각각 고유하게 정렬되어야 한다고 판단했습니다. 따라서 정렬 방식과 데이터 관리에 전역 상태를 사용하지 않고 지역 상태로 관리했습니다.
