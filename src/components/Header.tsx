@@ -5,7 +5,7 @@ import { PATH } from '@/constants/path';
 import { DEVICE } from '@/constants/device';
 
 type HeaderProps = {
-  pathname: string;
+  pathname: '/' | '/user';
 };
 
 type NavigationButtonProps = {

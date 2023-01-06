@@ -3,6 +3,11 @@ import styled, { css } from 'styled-components';
 
 type Props = {
   selectedUser: UserData;
+  userDetail?: boolean;
+};
+
+type ContainerType = {
+  userDetail?: boolean;
 };
 
 type InfoType = {
@@ -25,9 +30,9 @@ const infos: InfoType[] = [
   },
 ];
 
-export default function UserInfo({ selectedUser }: Props) {
+export default function UserInfo({ selectedUser, userDetail }: Props) {
   return (
-    <Container>
+    <Container userDetail={userDetail}>
       <Divider />
       <Profile>
         <img
@@ -53,13 +58,13 @@ export default function UserInfo({ selectedUser }: Props) {
   );
 }
 
-const Container = styled.div`
+const Container = styled.div<ContainerType>`
   position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 88px;
-  width: 352px;
+  width: ${({ userDetail }) => (userDetail ? 622 : 352)}px;
   height: 425px;
   background-color: ${({ theme }) => theme.colors.white};
   ${({ theme }) => {
@@ -94,8 +99,7 @@ const InfoList = styled.ul`
   flex-direction: column;
   align-items: center;
   gap: 10px;
-  width: 100%;
-  padding: 0 25px;
+  width: 302px;
 `;
 
 const InfoItemContainer = styled.div`

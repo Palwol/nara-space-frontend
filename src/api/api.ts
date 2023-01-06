@@ -18,7 +18,7 @@ const BASE_URL = process.env.BASE_URL;
 const instance = axios.create({
   baseURL: BASE_URL || 'http://localhost:9000',
   headers: {
-    put: {
+    patch: {
       'Content-Type': 'application/json',
     },
   },

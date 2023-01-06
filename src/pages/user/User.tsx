@@ -15,7 +15,7 @@ export default function User() {
   useEffect(() => {
     if (!usersData.length) return;
     setData(usersData);
-    setSelectedUser(usersData[0]);
+    setSelectedUser(usersData.filter((user) => user.checked)[0]);
   }, [usersData]);
 
   return (
@@ -23,7 +23,7 @@ export default function User() {
       <Header pathname="/user" />
       <UserInfoContainer>
         <CheckedUsersInfo selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
-        <UserInfo selectedUser={selectedUser} />
+        <UserInfo selectedUser={selectedUser} width={352} />
       </UserInfoContainer>
     </Container>
   );

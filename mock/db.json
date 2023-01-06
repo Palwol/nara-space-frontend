@@ -9,7 +9,7 @@
           "date": "1984-02-23",
           "comment": "I like to play.",
           "image": "1.png",
-          "checked": true
+          "checked": false
         },
         {
           "id": 2,
@@ -17,7 +17,7 @@
           "date": "1995-01-12",
           "comment": "This is innovation.",
           "image": "2.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 3,
@@ -25,7 +25,7 @@
           "date": "2020-10-11",
           "comment": "Have a nice day!",
           "image": "3.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 4,
@@ -33,7 +33,7 @@
           "date": "2002-06-07",
           "comment": "Cheers!",
           "image": "",
-          "checked": false
+          "checked": true
         },
         {
           "id": 5,
@@ -41,7 +41,7 @@
           "date": "2010-07-21",
           "comment": "VODKA",
           "image": "4.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 6,
@@ -49,7 +49,7 @@
           "date": "2013-02-12",
           "comment": "I'll give you only good",
           "image": "5.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 7,
@@ -57,7 +57,7 @@
           "date": "2017-08-12",
           "comment": "해-삐",
           "image": "6.png",
-          "checked": true
+          "checked": false
         },
         {
           "id": 8,
@@ -65,7 +65,7 @@
           "date": "1999-09-09",
           "comment": "오늘 하루는 어땠어?",
           "image": "7.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 9,
@@ -73,7 +73,7 @@
           "date": "2002-06-07",
           "comment": "지치고 힘들 때 하나씩 꺼내 먹어요.",
           "image": "",
-          "checked": true
+          "checked": false
         },
         {
           "id": 10,
@@ -81,7 +81,7 @@
           "date": "2002-06-07",
           "comment": "춘식이는 고양이",
           "image": "8.png",
-          "checked": true
+          "checked": false
         },
         {
           "id": 11,
@@ -89,7 +89,7 @@
           "date": "1999-09-09",
           "comment": "해보는 거야! 지금이 아니면 영원히 못해.",
           "image": "9.png",
-          "checked": true
+          "checked": false
         },
         {
           "id": 12,
@@ -97,7 +97,7 @@
           "date": "2020-10-11",
           "comment": "나는요 오빠가 좋은 걸 어떡해",
           "image": "10.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 13,
@@ -105,7 +105,7 @@
           "date": "2019-09-02",
           "comment": "너무 심각할 것 없어. 잘 될거야. 시간을 가져.",
           "image": "11.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 14,
@@ -113,7 +113,7 @@
           "date": "2002-06-07",
           "comment": "If winter comes, can spring be far behind.",
           "image": "",
-          "checked": true
+          "checked": false
         },
         {
           "id": 15,
@@ -121,7 +121,7 @@
           "date": "1980-07-31",
           "comment": "알로호모라 (Alohomora)",
           "image": "12.png",
-          "checked": true
+          "checked": false
         },
         {
           "id": 16,
@@ -129,7 +129,7 @@
           "date": "1979-09-19",
           "comment": "윙가르디움 레비오우사 (Wingardium Leviosa)",
           "image": "13.png",
-          "checked": false
+          "checked": true
         },
         {
           "id": 17,
@@ -137,11 +137,13 @@
           "date": "1926-12-31",
           "comment": "아바다 케다브라 (Avada Kedabra)",
           "image": "14.png",
-          "checked": false
+          "checked": true
         }
       ],
       "{\"result\":[{\"id\":1,\"name\":\"Pororo\",\"date\":\"1984-02-23\",\"comment\":\"I like to play.\",\"image\":\"1.png\",\"checked\":false},{\"id\":2,\"name\":\"Apple Kim\",\"date\":\"1995-01-12\",\"comment\":\"This is innovation.\",\"image\":\"2.png\",\"checked\":false},{\"id\":3,\"name\":\"Teddy Bear\",\"date\":\"2020-10-11\",\"comment\":\"Have a nice day!\",\"image\":\"3.png\",\"checked\":false},{\"id\":4,\"name\":\"Bear Lee\",\"date\":\"2002-06-07\",\"comment\":\"Cheers!\",\"image\":\"\",\"checked\":false},{\"id\":5,\"name\":\"Absolute\",\"date\":\"2010-07-21\",\"comment\":\"VODKA\",\"image\":\"4.png\",\"checked\":false},{\"id\":6,\"name\":\"Happy Meal\",\"date\":\"2013-02-12\",\"comment\":\"I'll give you only good\",\"image\":\"5.png\",\"checked\":false},{\"id\":7,\"name\":\"잔망루피\",\"date\":\"2017-08-12\",\"comment\":\"해-삐\",\"image\":\"6.png\",\"checked\":true},{\"id\":8,\"name\":\"라이언\",\"date\":\"1999-09-09\",\"comment\":\"오늘 하루는 어땠어?\",\"image\":\"7.png\",\"checked\":false},{\"id\":9,\"name\":\"어피치\",\"date\":\"2002-06-07\",\"comment\":\"지치고 힘들 때 하나씩 꺼내 먹어요.\",\"image\":\"\",\"checked\":true},{\"id\":10,\"name\":\"춘식이\",\"date\":\"2002-06-07\",\"comment\":\"춘식이는 고양이\",\"image\":\"8.png\",\"checked\":true},{\"id\":11,\"name\":\"스누피\",\"date\":\"1999-09-09\",\"comment\":\"해보는 거야! 지금이 아니면 영원히 못해.\",\"image\":\"9.png\",\"checked\":true},{\"id\":12,\"name\":\"아이유\",\"date\":\"2020-10-11\",\"comment\":\"나는요 오빠가 좋은 걸 어떡해\",\"image\":\"10.png\",\"checked\":false},{\"id\":13,\"name\":\"Brown\",\"date\":\"2019-09-02\",\"comment\":\"너무 심각할 것 없어. 잘 될거야. 시간을 가져.\",\"image\":\"11.png\",\"checked\":false},{\"id\":14,\"name\":\"Sally\",\"date\":\"2002-06-07\",\"comment\":\"If winter comes, can spring be far behind.\",\"image\":\"\",\"checked\":true},{\"id\":15,\"name\":\"해리포터\",\"date\":\"1980-07-31\",\"comment\":\"알로호모라 (Alohomora)\",\"image\":\"12.png\",\"checked\":true},{\"id\":16,\"name\":\"헤르미온느\",\"date\":\"1979-09-19\",\"comment\":\"윙가르디움 레비오우사 (Wingardium Leviosa)\",\"image\":\"13.png\",\"checked\":false},{\"id\":17,\"name\":\"볼드모트\",\"date\":\"1926-12-31\",\"comment\":\"아바다 케다브라 (Avada Kedabra)\",\"image\":\"14.png\",\"checked\":true}]}": "",
-      "{\"result\":[{\"id\":1,\"name\":\"Pororo\",\"date\":\"1984-02-23\",\"comment\":\"I like to play.\",\"image\":\"1.png\",\"checked\":true},{\"id\":2,\"name\":\"Apple Kim\",\"date\":\"1995-01-12\",\"comment\":\"This is innovation.\",\"image\":\"2.png\",\"checked\":false},{\"id\":3,\"name\":\"Teddy Bear\",\"date\":\"2020-10-11\",\"comment\":\"Have a nice day!\",\"image\":\"3.png\",\"checked\":false},{\"id\":4,\"name\":\"Bear Lee\",\"date\":\"2002-06-07\",\"comment\":\"Cheers!\",\"image\":\"\",\"checked\":false},{\"id\":5,\"name\":\"Absolute\",\"date\":\"2010-07-21\",\"comment\":\"VODKA\",\"image\":\"4.png\",\"checked\":false},{\"id\":6,\"name\":\"Happy Meal\",\"date\":\"2013-02-12\",\"comment\":\"I'll give you only good\",\"image\":\"5.png\",\"checked\":false},{\"id\":7,\"name\":\"잔망루피\",\"date\":\"2017-08-12\",\"comment\":\"해-삐\",\"image\":\"6.png\",\"checked\":true},{\"id\":8,\"name\":\"라이언\",\"date\":\"1999-09-09\",\"comment\":\"오늘 하루는 어땠어?\",\"image\":\"7.png\",\"checked\":false},{\"id\":9,\"name\":\"어피치\",\"date\":\"2002-06-07\",\"comment\":\"지치고 힘들 때 하나씩 꺼내 먹어요.\",\"image\":\"\",\"checked\":true},{\"id\":10,\"name\":\"춘식이\",\"date\":\"2002-06-07\",\"comment\":\"춘식이는 고양이\",\"image\":\"8.png\",\"checked\":true},{\"id\":11,\"name\":\"스누피\",\"date\":\"1999-09-09\",\"comment\":\"해보는 거야! 지금이 아니면 영원히 못해.\",\"image\":\"9.png\",\"checked\":true},{\"id\":12,\"name\":\"아이유\",\"date\":\"2020-10-11\",\"comment\":\"나는요 오빠가 좋은 걸 어떡해\",\"image\":\"10.png\",\"checked\":false},{\"id\":13,\"name\":\"Brown\",\"date\":\"2019-09-02\",\"comment\":\"너무 심각할 것 없어. 잘 될거야. 시간을 가져.\",\"image\":\"11.png\",\"checked\":false},{\"id\":14,\"name\":\"Sally\",\"date\":\"2002-06-07\",\"comment\":\"If winter comes, can spring be far behind.\",\"image\":\"\",\"checked\":true},{\"id\":15,\"name\":\"해리포터\",\"date\":\"1980-07-31\",\"comment\":\"알로호모라 (Alohomora)\",\"image\":\"12.png\",\"checked\":true},{\"id\":16,\"name\":\"헤르미온느\",\"date\":\"1979-09-19\",\"comment\":\"윙가르디움 레비오우사 (Wingardium Leviosa)\",\"image\":\"13.png\",\"checked\":false},{\"id\":17,\"name\":\"볼드모트\",\"date\":\"1926-12-31\",\"comment\":\"아바다 케다브라 (Avada Kedabra)\",\"image\":\"14.png\",\"checked\":false}]}": ""
+      "{\"result\":[{\"id\":1,\"name\":\"Pororo\",\"date\":\"1984-02-23\",\"comment\":\"I like to play.\",\"image\":\"1.png\",\"checked\":true},{\"id\":2,\"name\":\"Apple Kim\",\"date\":\"1995-01-12\",\"comment\":\"This is innovation.\",\"image\":\"2.png\",\"checked\":false},{\"id\":3,\"name\":\"Teddy Bear\",\"date\":\"2020-10-11\",\"comment\":\"Have a nice day!\",\"image\":\"3.png\",\"checked\":false},{\"id\":4,\"name\":\"Bear Lee\",\"date\":\"2002-06-07\",\"comment\":\"Cheers!\",\"image\":\"\",\"checked\":false},{\"id\":5,\"name\":\"Absolute\",\"date\":\"2010-07-21\",\"comment\":\"VODKA\",\"image\":\"4.png\",\"checked\":false},{\"id\":6,\"name\":\"Happy Meal\",\"date\":\"2013-02-12\",\"comment\":\"I'll give you only good\",\"image\":\"5.png\",\"checked\":false},{\"id\":7,\"name\":\"잔망루피\",\"date\":\"2017-08-12\",\"comment\":\"해-삐\",\"image\":\"6.png\",\"checked\":true},{\"id\":8,\"name\":\"라이언\",\"date\":\"1999-09-09\",\"comment\":\"오늘 하루는 어땠어?\",\"image\":\"7.png\",\"checked\":false},{\"id\":9,\"name\":\"어피치\",\"date\":\"2002-06-07\",\"comment\":\"지치고 힘들 때 하나씩 꺼내 먹어요.\",\"image\":\"\",\"checked\":true},{\"id\":10,\"name\":\"춘식이\",\"date\":\"2002-06-07\",\"comment\":\"춘식이는 고양이\",\"image\":\"8.png\",\"checked\":true},{\"id\":11,\"name\":\"스누피\",\"date\":\"1999-09-09\",\"comment\":\"해보는 거야! 지금이 아니면 영원히 못해.\",\"image\":\"9.png\",\"checked\":true},{\"id\":12,\"name\":\"아이유\",\"date\":\"2020-10-11\",\"comment\":\"나는요 오빠가 좋은 걸 어떡해\",\"image\":\"10.png\",\"checked\":false},{\"id\":13,\"name\":\"Brown\",\"date\":\"2019-09-02\",\"comment\":\"너무 심각할 것 없어. 잘 될거야. 시간을 가져.\",\"image\":\"11.png\",\"checked\":false},{\"id\":14,\"name\":\"Sally\",\"date\":\"2002-06-07\",\"comment\":\"If winter comes, can spring be far behind.\",\"image\":\"\",\"checked\":true},{\"id\":15,\"name\":\"해리포터\",\"date\":\"1980-07-31\",\"comment\":\"알로호모라 (Alohomora)\",\"image\":\"12.png\",\"checked\":true},{\"id\":16,\"name\":\"헤르미온느\",\"date\":\"1979-09-19\",\"comment\":\"윙가르디움 레비오우사 (Wingardium Leviosa)\",\"image\":\"13.png\",\"checked\":false},{\"id\":17,\"name\":\"볼드모트\",\"date\":\"1926-12-31\",\"comment\":\"아바다 케다브라 (Avada Kedabra)\",\"image\":\"14.png\",\"checked\":false}]}": "",
+      "{\"result\":[{\"id\":1,\"name\":\"Pororo\",\"date\":\"1984-02-23\",\"comment\":\"I like to play.\",\"image\":\"1.png\",\"checked\":false},{\"id\":2,\"name\":\"Apple Kim\",\"date\":\"1995-01-12\",\"comment\":\"This is innovation.\",\"image\":\"2.png\",\"checked\":true},{\"id\":3,\"name\":\"Teddy Bear\",\"date\":\"2020-10-11\",\"comment\":\"Have a nice day!\",\"image\":\"3.png\",\"checked\":true},{\"id\":4,\"name\":\"Bear Lee\",\"date\":\"2002-06-07\",\"comment\":\"Cheers!\",\"image\":\"\",\"checked\":true},{\"id\":5,\"name\":\"Absolute\",\"date\":\"2010-07-21\",\"comment\":\"VODKA\",\"image\":\"4.png\",\"checked\":true},{\"id\":6,\"name\":\"Happy Meal\",\"date\":\"2013-02-12\",\"comment\":\"I'll give you only good\",\"image\":\"5.png\",\"checked\":true},{\"id\":7,\"name\":\"잔망루피\",\"date\":\"2017-08-12\",\"comment\":\"해-삐\",\"image\":\"6.png\",\"checked\":false},{\"id\":8,\"name\":\"라이언\",\"date\":\"1999-09-09\",\"comment\":\"오늘 하루는 어땠어?\",\"image\":\"7.png\",\"checked\":true},{\"id\":9,\"name\":\"어피치\",\"date\":\"2002-06-07\",\"comment\":\"지치고 힘들 때 하나씩 꺼내 먹어요.\",\"image\":\"\",\"checked\":false},{\"id\":10,\"name\":\"춘식이\",\"date\":\"2002-06-07\",\"comment\":\"춘식이는 고양이\",\"image\":\"8.png\",\"checked\":false},{\"id\":11,\"name\":\"스누피\",\"date\":\"1999-09-09\",\"comment\":\"해보는 거야! 지금이 아니면 영원히 못해.\",\"image\":\"9.png\",\"checked\":false},{\"id\":12,\"name\":\"아이유\",\"date\":\"2020-10-11\",\"comment\":\"나는요 오빠가 좋은 걸 어떡해\",\"image\":\"10.png\",\"checked\":true},{\"id\":13,\"name\":\"Brown\",\"date\":\"2019-09-02\",\"comment\":\"너무 심각할 것 없어. 잘 될거야. 시간을 가져.\",\"image\":\"11.png\",\"checked\":true},{\"id\":14,\"name\":\"Sally\",\"date\":\"2002-06-07\",\"comment\":\"If winter comes, can spring be far behind.\",\"image\":\"\",\"checked\":true},{\"id\":15,\"name\":\"해리포터\",\"date\":\"1980-07-31\",\"comment\":\"알로호모라 (Alohomora)\",\"image\":\"12.png\",\"checked\":false},{\"id\":16,\"name\":\"헤르미온느\",\"date\":\"1979-09-19\",\"comment\":\"윙가르디움 레비오우사 (Wingardium Leviosa)\",\"image\":\"13.png\",\"checked\":true},{\"id\":17,\"name\":\"볼드모트\",\"date\":\"1926-12-31\",\"comment\":\"아바다 케다브라 (Avada Kedabra)\",\"image\":\"14.png\",\"checked\":true}]}": "",
+      "{\"result\":[{\"id\":1,\"name\":\"Pororo\",\"date\":\"1984-02-23\",\"comment\":\"I like to play.\",\"image\":\"1.png\",\"checked\":false},{\"id\":2,\"name\":\"Apple Kim\",\"date\":\"1995-01-12\",\"comment\":\"This is innovation.\",\"image\":\"2.png\",\"checked\":true},{\"id\":3,\"name\":\"Teddy Bear\",\"date\":\"2020-10-11\",\"comment\":\"Have a nice day!\",\"image\":\"3.png\",\"checked\":true},{\"id\":4,\"name\":\"Bear Lee\",\"date\":\"2002-06-07\",\"comment\":\"Cheers!\",\"image\":\"\",\"checked\":true},{\"id\":5,\"name\":\"Absolute\",\"date\":\"2010-07-21\",\"comment\":\"VODKA\",\"image\":\"4.png\",\"checked\":true},{\"id\":6,\"name\":\"Happy Meal\",\"date\":\"2013-02-12\",\"comment\":\"I'll give you only good\",\"image\":\"5.png\",\"checked\":true},{\"id\":7,\"name\":\"잔망루피\",\"date\":\"2017-08-12\",\"comment\":\"해-삐\",\"image\":\"6.png\",\"checked\":false},{\"id\":8,\"name\":\"라이언\",\"date\":\"1999-09-09\",\"comment\":\"오늘 하루는 어땠어?\",\"image\":\"7.png\",\"checked\":true},{\"id\":9,\"name\":\"어피치\",\"date\":\"2002-06-07\",\"comment\":\"지치고 힘들 때 하나씩 꺼내 먹어요.\",\"image\":\"\",\"checked\":false},{\"id\":10,\"name\":\"춘식이\",\"date\":\"2002-06-07\",\"comment\":\"춘식이는 고양이\",\"image\":\"8.png\",\"checked\":false},{\"id\":11,\"name\":\"스누피\",\"date\":\"1999-09-09\",\"comment\":\"해보는 거야! 지금이 아니면 영원히 못해.\",\"image\":\"9.png\",\"checked\":false},{\"id\":12,\"name\":\"아이유\",\"date\":\"2020-10-11\",\"comment\":\"나는요 오빠가 좋은 걸 어떡해\",\"image\":\"10.png\",\"checked\":true},{\"id\":13,\"name\":\"Brown\",\"date\":\"2019-09-02\",\"comment\":\"너무 심각할 것 없어. 잘 될거야. 시간을 가져.\",\"image\":\"11.png\",\"checked\":true},{\"id\":14,\"name\":\"Sally\",\"date\":\"2002-06-07\",\"comment\":\"If winter comes, can spring be far behind.\",\"image\":\"\",\"checked\":false},{\"id\":15,\"name\":\"해리포터\",\"date\":\"1980-07-31\",\"comment\":\"알로호모라 (Alohomora)\",\"image\":\"12.png\",\"checked\":false},{\"id\":16,\"name\":\"헤르미온느\",\"date\":\"1979-09-19\",\"comment\":\"윙가르디움 레비오우사 (Wingardium Leviosa)\",\"image\":\"13.png\",\"checked\":true},{\"id\":17,\"name\":\"볼드모트\",\"date\":\"1926-12-31\",\"comment\":\"아바다 케다브라 (Avada Kedabra)\",\"image\":\"14.png\",\"checked\":true}]}": ""
     }
   ]
 }
