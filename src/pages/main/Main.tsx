@@ -2,7 +2,7 @@ import Header from '@/components/Header';
 import styled, { css } from 'styled-components';
 import CheckedUserList from './components/CheckedUserList';
 import UserList from './components/UserList';
-import Arrow from '@/assets/images/arrow.svg';
+import Arrow from '@/assets/icons/arrow.svg';
 import { useEffect, useState } from 'react';
 import theme from '@/styles/theme';
 import { useAppDispatch } from '@/hooks/redux-hooks';

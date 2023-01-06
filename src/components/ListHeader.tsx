@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components';
-import AngleBracket from '@/assets/images/angle-bracket.svg';
+import AngleBracket from '@/assets/icons/angle-bracket.svg';
 import { useState } from 'react';
 import { CategoryType, sortCategories } from '@/constants/sort';
 
@@ -7,6 +7,11 @@ type Props = {
   nameWidth: number;
   categoryItem: CategoryType;
   setCategoryItem: React.Dispatch<React.SetStateAction<CategoryType>>;
+  infoList?: boolean;
+};
+
+type ContainerProps = {
+  infoList?: boolean;
 };
 
 type CategoryItemProps = {
@@ -17,7 +22,7 @@ type TitleContainerProps = {
   nameWidth: number;
 };
 
-export default function ListHeader({ nameWidth, categoryItem, setCategoryItem }: Props) {
+export default function ListHeader({ nameWidth, categoryItem, setCategoryItem, infoList }: Props) {
   const [isOpened, setIsOpened] = useState<boolean>(false);
 
   const handleSelectBoxClick = () => {
@@ -34,7 +39,7 @@ export default function ListHeader({ nameWidth, categoryItem, setCategoryItem }:
   };
 
   return (
-    <Container>
+    <Container infoList={infoList}>
       <SelectBox onClick={handleSelectBoxClick}>
         <span>{categoryItem.text}</span>
         <AngleBracket />
@@ -61,7 +66,25 @@ export default function ListHeader({ nameWidth, categoryItem, setCategoryItem }:
   );
 }
 
-const Container = styled.div`
+const TitleContainer = styled.div<TitleContainerProps>`
+  display: flex;
+  width: 100%;
+  gap: 10px;
+  ${({ theme }) => theme.fonts.title}
+
+  span:first-child {
+    width: ${({ nameWidth }) => nameWidth}px;
+    ${({ theme }) => {
+      return css`
+        ${theme.mediaQuery.mobile} {
+          width: 114px;
+        }
+      `;
+    }}
+  }
+`;
+
+const Container = styled.div<ContainerProps>`
   position: relative;
   display: flex;
   flex-direction: column;
@@ -69,7 +92,13 @@ const Container = styled.div`
   width: 100%;
   height: 93px;
   padding: 20px 20px 10px 20px;
-  background-color: ${({ theme }) => theme.colors.lightblue1};
+  background-color: ${({ infoList, theme }) => (infoList ? theme.colors.blue4 : theme.colors.lightblue1)};
+  ${TitleContainer} {
+    span {
+      color: ${({ infoList, theme }) => infoList && theme.colors.white};
+    }
+  }
+
   ${({ theme }) => {
     return css`
       ${theme.mediaQuery.mobile} {
@@ -116,6 +145,15 @@ const CategoryList = styled.div`
   box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.15);
   border-radius: 0px 0px 5px 5px;
   z-index: 5;
+  ${({ theme }) => {
+    return css`
+      ${theme.mediaQuery.mobile} {
+        top: 34px;
+        left: auto;
+        right: 20px;
+      }
+    `;
+  }}
 `;
 
 const CategoryItem = styled.div<CategoryItemProps>`
@@ -133,23 +171,6 @@ const CategoryItem = styled.div<CategoryItemProps>`
   }
   &:last-of-type {
     padding: 4px 0 5px 0;
-  }
-`;
-
-const TitleContainer = styled.div<TitleContainerProps>`
-  display: flex;
-  width: 100%;
-  gap: 10px;
-  ${({ theme }) => theme.fonts.title}
-  span:first-child {
-    width: ${({ nameWidth }) => nameWidth}px;
-    ${({ theme }) => {
-      return css`
-        ${theme.mediaQuery.mobile} {
-          width: 114px;
-        }
-      `;
-    }}
   }
 `;
 

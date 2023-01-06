@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import { useNavigate } from 'react-router-dom';
-import Logo from '@/assets/images/logo.svg';
+import Logo from '@/assets/icons/logo.svg';
 import { PATH } from '@/constants/path';
 import { DEVICE } from '@/constants/device';
 

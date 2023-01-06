@@ -45,7 +45,7 @@ const Container = styled.div`
   ${({ theme }) => {
     return css`
       ${theme.mediaQuery.mobile} {
-        width: 100%;
+        width: 353px;
         height: 304px;
       }
     `;

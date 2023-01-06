@@ -1,7 +1,7 @@
 import { UserData } from '@/api/api';
 import { Ellipsis } from '@/styles/styleUtils';
 import styled, { css } from 'styled-components';
-import Check from '@/assets/images/check.svg';
+import Check from '@/assets/icons/check.svg';
 import { useAppDispatch } from '@/hooks/redux-hooks';
 import { changeUserChecked } from '@/store/users-slice';
 

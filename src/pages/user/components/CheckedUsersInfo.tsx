@@ -1,3 +1,4 @@
+import { UserData } from '@/api/api';
 import List from '@/components/List';
 import ListHeader from '@/components/ListHeader';
 import { CategoryType, sortCategories } from '@/constants/sort';
@@ -7,11 +8,11 @@ import { sortData } from '@/utils/sort';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
-const NAME_WIDTH = 80;
+const NAME_WIDTH = 100;
 
-export default function UserList() {
+export default function CheckedUsersInfo() {
   const usersData = useAppSelector((state: RootState) => state.users.changedData);
-  const [orderedData, setOrderedData] = useState(usersData);
+  const [orderedData, setOrderedData] = useState<UserData[]>(usersData);
   const [categoryItem, setCategoryItem] = useState<CategoryType>(sortCategories[0]);
 
   useEffect(() => {
@@ -20,9 +21,14 @@ export default function UserList() {
 
   return (
     <Container>
-      <ListHeader nameWidth={NAME_WIDTH} categoryItem={categoryItem} setCategoryItem={setCategoryItem} />
+      <ListHeader
+        nameWidth={NAME_WIDTH}
+        categoryItem={categoryItem}
+        setCategoryItem={setCategoryItem}
+        infoList={true}
+      />
       <ListContainer>
-        <List data={orderedData} nameWidth={NAME_WIDTH} setCheckBox={true} />
+        <List data={orderedData.filter((el) => el.checked)} nameWidth={NAME_WIDTH} setCheckBox={false} />
       </ListContainer>
     </Container>
   );
@@ -31,15 +37,17 @@ export default function UserList() {
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
   width: 250px;
-  height: 490px;
+  height: 425px;
   background-color: ${({ theme }) => theme.colors.white};
   ${({ theme }) => {
     return css`
       ${theme.mediaQuery.mobile} {
+        position: absolute;
+        top: 403px;
         width: 353px;
-        height: 244px;
+        height: 254px;
+        z-index: 5;
       }
     `;
   }}
