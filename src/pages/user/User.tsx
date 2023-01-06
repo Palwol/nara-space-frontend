@@ -23,7 +23,7 @@ export default function User() {
       <Header pathname="/user" />
       <UserInfoContainer>
         <CheckedUsersInfo selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
-        <UserInfo selectedUser={selectedUser} width={352} />
+        <UserInfo selectedUser={selectedUser} />
       </UserInfoContainer>
     </Container>
   );
