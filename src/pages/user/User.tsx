@@ -10,18 +10,20 @@ import UserInfo from '../../components/UserInfo';
 export default function User() {
   const usersData = useAppSelector((state: RootState) => state.users.data);
   const [data, setData] = useState<UserData[]>(usersData);
+  const [selectedUser, setSelectedUser] = useState<UserData>(data[0]);
 
   useEffect(() => {
     if (!usersData.length) return;
     setData(usersData);
+    setSelectedUser(usersData[0]);
   }, [usersData]);
 
   return (
     <Container>
       <Header pathname="/user" />
       <UserInfoContainer>
-        <CheckedUsersInfo />
-        <UserInfo selectedUser={data[0]} />
+        <CheckedUsersInfo selectedUser={selectedUser} setSelectedUser={setSelectedUser} />
+        <UserInfo selectedUser={selectedUser} />
       </UserInfoContainer>
     </Container>
   );

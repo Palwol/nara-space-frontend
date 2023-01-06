@@ -9,11 +9,16 @@ type Props = {
   data: UserData[];
   nameWidth: number;
   setCheckBox: boolean;
+  infoList?: boolean;
+  selectedUser?: UserData;
+  setSelectedUser?: React.Dispatch<React.SetStateAction<UserData>>;
 };
 
 type UserItemProps = {
   setCheckBox: boolean;
   isChecked: boolean;
+  infoList?: boolean;
+  isSelectedUser?: boolean;
 };
 
 type NameSpanProps = {
@@ -24,12 +29,17 @@ type CheckBoxProps = {
   isChecked: boolean;
 };
 
-export default function List({ data, nameWidth, setCheckBox }: Props) {
+export default function List({ data, nameWidth, setCheckBox, infoList, selectedUser, setSelectedUser }: Props) {
   const dispatch = useAppDispatch();
 
-  const handleUserClick = (id: number) => {
-    if (!setCheckBox) return;
-    dispatch(changeUserChecked({ id }));
+  const handleUserClick = (item: UserData) => {
+    if (infoList && setSelectedUser) {
+      setSelectedUser(item);
+      return;
+    }
+    if (setCheckBox) {
+      dispatch(changeUserChecked({ id: item.id }));
+    }
   };
 
   return (
@@ -37,7 +47,13 @@ export default function List({ data, nameWidth, setCheckBox }: Props) {
       <UserList>
         {data.map((item, index) => (
           <UserItemContainer key={item.id}>
-            <UserItem setCheckBox={setCheckBox} isChecked={item.checked} onClick={() => handleUserClick(item.id)}>
+            <UserItem
+              setCheckBox={setCheckBox}
+              isChecked={item.checked}
+              infoList={infoList}
+              isSelectedUser={selectedUser?.id === item.id}
+              onClick={() => handleUserClick(item)}
+            >
               <UserInfoContainer>
                 <NameSpan nameWidth={nameWidth}>{item.name}</NameSpan>
                 <span>{item.date.replaceAll('-', '.')}</span>
@@ -88,9 +104,10 @@ const UserItem = styled.div<UserItemProps>`
   width: 100%;
   height: 39px;
   padding: 0 20px;
-  background-color: ${({ setCheckBox, isChecked, theme }) => setCheckBox && isChecked && theme.colors.blue2};
+  background-color: ${({ setCheckBox, isChecked, isSelectedUser, theme }) =>
+    ((setCheckBox && isChecked) || isSelectedUser) && theme.colors.blue2};
   ${({ theme }) => theme.fonts.body};
-  cursor: ${({ setCheckBox }) => setCheckBox && 'pointer'};
+  cursor: ${({ setCheckBox, infoList }) => (setCheckBox || infoList) && 'pointer'};
 `;
 
 const UserInfoContainer = styled.div`

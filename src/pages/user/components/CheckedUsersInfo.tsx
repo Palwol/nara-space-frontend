@@ -8,9 +8,14 @@ import { sortData } from '@/utils/sort';
 import { useEffect, useState } from 'react';
 import styled, { css } from 'styled-components';
 
+type Props = {
+  selectedUser: UserData;
+  setSelectedUser: React.Dispatch<React.SetStateAction<UserData>>;
+};
+
 const NAME_WIDTH = 100;
 
-export default function CheckedUsersInfo() {
+export default function CheckedUsersInfo({ selectedUser, setSelectedUser }: Props) {
   const usersData = useAppSelector((state: RootState) => state.users.changedData);
   const [orderedData, setOrderedData] = useState<UserData[]>(usersData);
   const [categoryItem, setCategoryItem] = useState<CategoryType>(sortCategories[0]);
@@ -28,7 +33,14 @@ export default function CheckedUsersInfo() {
         infoList={true}
       />
       <ListContainer>
-        <List data={orderedData.filter((el) => el.checked)} nameWidth={NAME_WIDTH} setCheckBox={false} />
+        <List
+          data={orderedData.filter((el) => el.checked)}
+          nameWidth={NAME_WIDTH}
+          setCheckBox={false}
+          infoList={true}
+          selectedUser={selectedUser}
+          setSelectedUser={setSelectedUser}
+        />
       </ListContainer>
     </Container>
   );
